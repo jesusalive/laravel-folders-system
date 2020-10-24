@@ -151,6 +151,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Components" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/Components" />
       <recent name="$PROJECT_DIR$/app/Http/Services/Application" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -172,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603454160333</updated>
       <workItem from="1603454161431" duration="5384000" />
-      <workItem from="1603493932564" duration="11634000" />
+      <workItem from="1603493932564" duration="14180000" />
     </task>
     <servers />
   </component>
@@ -193,10 +195,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603474308732" />
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603502302476">
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603506742914">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603502302476" />
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603506742914" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603496084216">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

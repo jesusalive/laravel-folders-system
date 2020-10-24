@@ -10,4 +10,9 @@ class ApplicationController extends Controller
     {
         return Inertia::render('Index');
     }
+
+    public function subFolder($id)
+    {
+        return Inertia::render('SubFolder', ['id' => $id]);
+    }
 }

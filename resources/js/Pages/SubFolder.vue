@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        <folder-page :id="1"/>
+        <folder-page :id="id"/>
     </default-layout>
 </template>
 
@@ -9,10 +9,15 @@ import FolderPage from "../Components/FolderContent"
 import DefaultLayout from "../Layouts/Default"
 
 export default {
-    name: 'Index',
+    name: "SubFolder",
+    props: ['id'],
     components: {
         FolderPage,
         DefaultLayout
     }
 }
 </script>
+
+<style scoped>
+
+</style>

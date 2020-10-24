@@ -67102,13 +67102,27 @@ module.exports = g;
 var map = {
 	"./Index": [
 		"./resources/js/Pages/Index.vue",
-		1,
-		0
+		2,
+		0,
+		4
 	],
 	"./Index.vue": [
 		"./resources/js/Pages/Index.vue",
-		1,
-		0
+		2,
+		0,
+		4
+	],
+	"./SubFolder": [
+		"./resources/js/Pages/SubFolder.vue",
+		2,
+		0,
+		3
+	],
+	"./SubFolder.vue": [
+		"./resources/js/Pages/SubFolder.vue",
+		2,
+		0,
+		3
 	]
 };
 function webpackAsyncContext(req) {

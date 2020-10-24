@@ -39,7 +39,7 @@ export default {
     methods: {
         async addFolder () {
             this.loadingAddFolder = true
-            await axios.post('/folders', { name: this.newFolderName, belongs_to_folder: 1 })
+            await axios.post('/folders', { name: this.newFolderName, belongs_to_folder: this.folderId })
                 .then(() => {
                     this.newFolderName = null
                     this.$emit('folderCreated')
