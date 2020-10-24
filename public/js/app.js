@@ -2940,6 +2940,36 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./bootstrap-vue-icons.min.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css":
 /*!***********************************************************!*\
   !*** ./node_modules/bootstrap-vue/dist/bootstrap-vue.css ***!
@@ -50494,6 +50524,25 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css ***!
+  \*****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n * BootstrapVue Icons Custom CSS (https://bootstrap-vue.org)\n */.bv-no-focus-ring:focus{outline:0}@media (max-width:575.98px){.bv-d-xs-down-none{display:none!important}}@media (max-width:767.98px){.bv-d-sm-down-none{display:none!important}}@media (max-width:991.98px){.bv-d-md-down-none{display:none!important}}@media (max-width:1199.98px){.bv-d-lg-down-none{display:none!important}}.bv-d-xl-down-none{display:none!important}.b-icon.bi{display:inline-block;overflow:visible;vertical-align:-.15em}.b-icon.b-icon-animation-cylon,.b-icon.b-iconstack .b-icon-animation-cylon>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:.75s infinite ease-in-out alternate b-icon-animation-cylon;animation:.75s infinite ease-in-out alternate b-icon-animation-cylon}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-cylon,.b-icon.b-iconstack .b-icon-animation-cylon>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-cylon-vertical,.b-icon.b-iconstack .b-icon-animation-cylon-vertical>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:.75s infinite ease-in-out alternate b-icon-animation-cylon-vertical;animation:.75s infinite ease-in-out alternate b-icon-animation-cylon-vertical}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-cylon-vertical,.b-icon.b-iconstack .b-icon-animation-cylon-vertical>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-fade,.b-icon.b-iconstack .b-icon-animation-fade>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:.75s infinite ease-in-out alternate b-icon-animation-fade;animation:.75s infinite ease-in-out alternate b-icon-animation-fade}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-fade,.b-icon.b-iconstack .b-icon-animation-fade>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-spin,.b-icon.b-iconstack .b-icon-animation-spin>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:2s infinite linear normal b-icon-animation-spin;animation:2s infinite linear normal b-icon-animation-spin}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-spin,.b-icon.b-iconstack .b-icon-animation-spin>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-spin-reverse,.b-icon.b-iconstack .b-icon-animation-spin-reverse>g{-webkit-transform-origin:center;transform-origin:center;animation:2s infinite linear reverse b-icon-animation-spin}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-spin-reverse,.b-icon.b-iconstack .b-icon-animation-spin-reverse>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-spin-pulse,.b-icon.b-iconstack .b-icon-animation-spin-pulse>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:1s infinite steps(8) normal b-icon-animation-spin;animation:1s infinite steps(8) normal b-icon-animation-spin}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-spin-pulse,.b-icon.b-iconstack .b-icon-animation-spin-pulse>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-spin-reverse-pulse,.b-icon.b-iconstack .b-icon-animation-spin-reverse-pulse>g{-webkit-transform-origin:center;transform-origin:center;animation:1s infinite steps(8) reverse b-icon-animation-spin}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-spin-reverse-pulse,.b-icon.b-iconstack .b-icon-animation-spin-reverse-pulse>g{-webkit-animation:none;animation:none}}.b-icon.b-icon-animation-throb,.b-icon.b-iconstack .b-icon-animation-throb>g{-webkit-transform-origin:center;transform-origin:center;-webkit-animation:.75s infinite ease-in-out alternate b-icon-animation-throb;animation:.75s infinite ease-in-out alternate b-icon-animation-throb}@media (prefers-reduced-motion:reduce){.b-icon.b-icon-animation-throb,.b-icon.b-iconstack .b-icon-animation-throb>g{-webkit-animation:none;animation:none}}@-webkit-keyframes b-icon-animation-cylon{0%{-webkit-transform:translateX(-25%);transform:translateX(-25%)}100%{-webkit-transform:translateX(25%);transform:translateX(25%)}}@keyframes b-icon-animation-cylon{0%{-webkit-transform:translateX(-25%);transform:translateX(-25%)}100%{-webkit-transform:translateX(25%);transform:translateX(25%)}}@-webkit-keyframes b-icon-animation-cylon-vertical{0%{-webkit-transform:translateY(25%);transform:translateY(25%)}100%{-webkit-transform:translateY(-25%);transform:translateY(-25%)}}@keyframes b-icon-animation-cylon-vertical{0%{-webkit-transform:translateY(25%);transform:translateY(25%)}100%{-webkit-transform:translateY(-25%);transform:translateY(-25%)}}@-webkit-keyframes b-icon-animation-fade{0%{opacity:.1}100%{opacity:1}}@keyframes b-icon-animation-fade{0%{opacity:.1}100%{opacity:1}}@-webkit-keyframes b-icon-animation-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes b-icon-animation-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-webkit-keyframes b-icon-animation-throb{0%{opacity:.5;-webkit-transform:scale(.5);transform:scale(.5)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes b-icon-animation-throb{0%{opacity:.5;-webkit-transform:scale(.5);transform:scale(.5)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}.btn .b-icon.bi,.dropdown-item .b-icon.bi,.dropdown-toggle .b-icon.bi,.input-group-text .b-icon.bi,.nav-link .b-icon.bi{font-size:125%;vertical-align:text-bottom}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/bootstrap-vue/dist/bootstrap-vue.css":
 /*!*******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/bootstrap-vue/dist/bootstrap-vue.css ***!
@@ -67053,13 +67102,13 @@ module.exports = g;
 var map = {
 	"./Index": [
 		"./resources/js/Pages/Index.vue",
-		0,
-		2
+		1,
+		0
 	],
 	"./Index.vue": [
 		"./resources/js/Pages/Index.vue",
-		0,
-		2
+		1,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -67102,6 +67151,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css");
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_icons_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue-icons.min.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css");
+/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_icons_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_icons_min_css__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -67109,7 +67161,7 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__["plugin"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BootstrapVue"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["IconsPlugin"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BootstrapVueIcons"]);
 var el = document.getElementById('app');
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   render: function render(h) {

@@ -139,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Zepplin/gestaon-admin/app/Http/Resources/Company/CompanyResource.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -148,6 +148,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Services/Application" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -164,7 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603454160333</updated>
       <workItem from="1603454161431" duration="5384000" />
-      <workItem from="1603493932564" duration="1003000" />
+      <workItem from="1603493932564" duration="11634000" />
     </task>
     <servers />
   </component>
@@ -172,13 +180,26 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="693" y="298" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603456734302">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603497479980">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1603497479980" />
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603497131200">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603497131200" />
     <state x="693" y="298" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603456734302" />
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl" timestamp="1603474308732">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603474308732" />
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603502302476">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603502302476" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603496084216">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603496084216" />
   </component>
 </project>
