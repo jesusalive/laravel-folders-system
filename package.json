@@ -24,6 +24,7 @@
         "@inertiajs/progress": "^0.1.2",
         "bootstrap": "^4.5.3",
         "bootstrap-vue": "^2.18.1",
+        "js-file-download": "^0.4.12",
         "moment": "^2.29.1",
         "vue": "^2.6.12"
     }

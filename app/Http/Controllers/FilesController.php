@@ -6,6 +6,7 @@ use App\Http\Resources\Application\ErrorResource;
 use App\Http\Resources\File\FileResource;
 use App\Http\Services\File\AddFileService;
 use App\Http\Services\File\DeleteFileService;
+use App\Http\Services\File\GetOneFileService;
 use App\Http\Services\File\UpdateFileService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -33,6 +34,16 @@ class FilesController extends Controller
         try {
             (new DeleteFileService())($id);
             return response()->json(['data' => ['message' => 'Deleted']]);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(new ErrorResource('File not found'), 400);
+        }
+    }
+
+    public function downloadFile($id)
+    {
+        try {
+            $file = (new GetOneFileService())($id);
+            return response()->download(public_path(str_replace('public/', 'storage/', $file->path)));
         } catch (ModelNotFoundException $e) {
             return response()->json(new ErrorResource('File not found'), 400);
         }

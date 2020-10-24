@@ -12,8 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Mixins/handle-item-options */ "./resources/js/Mixins/handle-item-options.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var js_file_download__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-file-download */ "./node_modules/js-file-download/file-download.js");
+/* harmony import */ var js_file_download__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(js_file_download__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -68,6 +70,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -91,7 +95,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/files/".concat(this.file.id), {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("/files/".concat(this.file.id), {
         name: this.newName
       }).then(function (res) {
         _this.fileName = res.data.data.name;
@@ -107,11 +111,24 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.loading = true;
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/files/".concat(this.file.id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("/files/".concat(this.file.id)).then(function (res) {
         _this2.$emit('fileRemoved');
       })["finally"](function () {
         _this2.loading = false;
       });
+    },
+    downloadFile: function downloadFile() {
+      var _this3 = this;
+
+      var filePath = String(this.file.path).replace('public/', 'storage/');
+      axios__WEBPACK_IMPORTED_MODULE_3___default()({
+        url: '/' + filePath,
+        method: 'GET',
+        responseType: 'blob'
+      }).then(function (response) {
+        js_file_download__WEBPACK_IMPORTED_MODULE_2___default()(new Blob([response.data]), _this3.fileName);
+      });
+      this.showOptions = false;
     }
   },
   created: function created() {
@@ -1061,7 +1078,20 @@ var render = function() {
                 [_vm._v("Renomear")]
               ),
               _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
+              _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")]),
+              _vm._v(" "),
+              _c(
+                "li",
+                {
+                  staticClass: "list-group-item",
+                  on: {
+                    click: function($event) {
+                      return _vm.downloadFile()
+                    }
+                  }
+                },
+                [_vm._v("Download")]
+              )
             ])
           ])
         : _vm._e(),
@@ -1679,7 +1709,7 @@ var render = function() {
                             [
                               _vm._l(_vm.folders, function(folder) {
                                 return _c("folder", {
-                                  key: folder.id,
+                                  key: "Folder" + folder.id,
                                   attrs: { id: folder.id, name: folder.name },
                                   on: {
                                     folderRemoved: function($event) {
@@ -1691,7 +1721,7 @@ var render = function() {
                               _vm._v(" "),
                               _vm._l(_vm.files, function(file) {
                                 return _c("file", {
-                                  key: file.id,
+                                  key: "File" + file.id,
                                   attrs: { file: file },
                                   on: {
                                     fileRemoved: function($event) {

@@ -15,6 +15,7 @@
                 <li class="list-group-item" v-b-modal.delete-file>Excluir</li>
                 <li class="list-group-item" v-b-modal.rename-file>Renomear</li>
                 <li class="list-group-item">Mover</li>
+                <li class="list-group-item" @click="downloadFile()">Download</li>
             </ul>
         </div>
         <b-modal
@@ -55,7 +56,8 @@
 <script>
 import HandleItemOptions from '../Mixins/handle-item-options'
 import moment from 'moment'
-import axios from "axios";
+import FileDownloader from 'js-file-download'
+import axios from "axios"
 
 export default {
     props: ['file'],
@@ -95,6 +97,19 @@ export default {
                 .finally(() => {
                     this.loading = false
                 })
+        },
+        downloadFile () {
+            const filePath = String(this.file.path).replace('public/', 'storage/')
+
+            axios({
+                url: '/' + filePath,
+                method: 'GET',
+                responseType: 'blob',
+            }).then((response) => {
+                FileDownloader(new Blob([response.data]), this.fileName)
+            })
+
+            this.showOptions = false
         }
     },
     created () {

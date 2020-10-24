@@ -16,6 +16,7 @@ Route::delete('/folders/{id}', [FoldersController::class, 'delete']);
 
 // FILES
 Route::post('/files', [FilesController::class, 'addFile']);
+Route::get('/files/{id}/download', [FilesController::class, 'downloadFile']);
 Route::put('/files/{id}', [FilesController::class, 'update']);
 Route::delete('/files/{id}', [FilesController::class, 'delete']);
 

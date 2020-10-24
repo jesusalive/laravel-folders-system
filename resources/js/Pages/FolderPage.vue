@@ -16,14 +16,14 @@
                         <folder
                             @folderRemoved="loadData()"
                             v-for="folder of folders"
-                            :key="folder.id"
+                            :key="`Folder${folder.id}`"
                             :id="folder.id"
                             :name="folder.name"
                         />
                         <file
                             @fileRemoved="loadData()"
                             v-for="file of files"
-                            :key="file.id"
+                            :key="`File${file.id}`"
                             :file="file"
                         />
                     </div>
