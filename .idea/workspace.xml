@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="" />
+    <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/File/AddFileService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/File.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Mixins/handle-item-options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Folder/FolderResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Folder/FolderResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Folder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Folder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_23_225915_create_archives_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_23_225915_create_files_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Folder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Folder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderContent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Loading.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/SubFolder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +50,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -132,6 +171,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jHHaN0ECAayt1tYv22Zywb6eoH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -174,34 +214,50 @@
       <option name="presentableId" value="Default" />
       <updated>1603454160333</updated>
       <workItem from="1603454161431" duration="5384000" />
-      <workItem from="1603493932564" duration="14180000" />
+      <workItem from="1603493932564" duration="14257000" />
+      <workItem from="1603535725635" duration="11113000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603497479980">
+    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603539224531">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1603497479980" />
-    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603497131200">
+    <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1603539224531" />
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603543928624">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603497131200" />
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603543928624" />
     <state x="693" y="298" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603456734302" />
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl" timestamp="1603474308732">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603474308732" />
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603506742914">
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603540434580">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603506742914" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603496084216">
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603540434580" />
+    <state x="374" y="136" width="618" height="522" key="find.popup" timestamp="1603540407899">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603496084216" />
+    <state x="374" y="136" width="618" height="522" key="find.popup/0.27.1366.741@0.27.1366.741" timestamp="1603540407899" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603544574652">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603544574652" />
   </component>
 </project>

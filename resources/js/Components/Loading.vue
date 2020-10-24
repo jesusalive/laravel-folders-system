@@ -2,7 +2,7 @@
     <div class="loading-wrapper">
         <div class="d-flex align-items-center">
             <b-icon icon="arrow-counterclockwise" animation="spin-reverse" font-scale="2" />
-            <span class="ml-3">Só um segundo</span>
+            <span class="ml-1">Só um segundo...</span>
         </div>
     </div>
 </template>

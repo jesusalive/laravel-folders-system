@@ -14,9 +14,9 @@ class Folder extends Model
         'belongs_to_folder'
     ];
 
-    public function archives()
+    public function files()
     {
-        return $this->hasMany(Archive::class, 'folder_id');
+        return $this->hasMany(File::class, 'folder_id');
     }
 
     public function folders()

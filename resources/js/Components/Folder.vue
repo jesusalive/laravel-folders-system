@@ -1,16 +1,16 @@
 <template>
-    <div class="d-flex">
+    <div class="d-flex" :class="[showOptions ? 'mr-2' : 'mr-5']">
         <div class="position-relative">
             <inertia-link
                 as="div"
                 :href="`/subfolder/${id}`"
-                class="d-flex flex-column text-center cursor-pointer folder"
+                class="d-flex flex-column text-center cursor-pointer folder-item"
             >
-                <img src="/img/folder.png" alt="Folder" class="icon mx-auto">
+                <b-icon icon="folder" class="text-warning" font-scale="3" />
                 <span>{{ name }}</span>
             </inertia-link>
-            <div class="folder-options bg-primary rounded px-1 cursor-pointer">
-                <b-icon icon="three-dots" class="text-light" @click="toogleOptions()" />
+            <div @click="toogleOptions()" class="folder-item-options bg-primary rounded px-1 cursor-pointer">
+                <b-icon icon="three-dots" class="text-light" />
             </div>
         </div>
         <div v-if="showOptions">
@@ -24,54 +24,14 @@
 </template>
 
 <script>
+import HandleItemOptions from "../Mixins/handle-item-options";
+
 export default {
     props: ['id', 'name'],
-    data () {
-        return {
-            showOptions: false
-        }
-    },
-    methods: {
-        toogleOptions () {
-            this.showOptions = !this.showOptions
-        }
-    },
+    mixins: [HandleItemOptions],
     name: "Folder"
 }
 </script>
 
 <style scoped>
-.folder img {
-    transition: all 500ms;
-}
-
-.folder:hover img {
-    height: 80px;
-    width: 80px;
-}
-
-.icon {
-    height: 60px;
-    width: 60px;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.folder-options {
-    position: absolute;
-    top: -10px;
-    right: 0;
-}
-
-.list-group-item {
-    cursor: pointer;
-    font-size: 13px !important;
-}
-
-.list-group-item:hover {
-    background-color: #007bff;
-    color: #eee;
-}
 </style>

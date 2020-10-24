@@ -13,7 +13,7 @@ class FolderResource extends JsonResource
             'name' => $this->resource->name,
             'belongsToFolder' => $this->resource->belongs_to_folder,
             'folders' => FolderResource::collection($this->resource->folders),
-            'archives' => $this->resource->archives
+            'files' => $this->resource->files
         ];
     }
 }

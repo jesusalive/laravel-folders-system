@@ -1,0 +1,33 @@
+.list-group-item {
+    cursor: pointer;
+    font-size: 13px !important;
+}
+
+.list-group-item:hover {
+    background-color: #007bff;
+    color: #eee;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.folder-item span {
+    font-size: 13px;
+}
+
+.folder-item svg {
+    transition: all 500ms;
+    margin-bottom: 10px;
+}
+
+.folder-item:hover svg {
+    height: 80px;
+    width: 80px;
+}
+
+.folder-item-options {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}

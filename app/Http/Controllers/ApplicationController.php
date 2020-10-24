@@ -8,11 +8,11 @@ class ApplicationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Index');
+        return Inertia::render('FolderPage', ['id' => 1]);
     }
 
     public function subFolder($id)
     {
-        return Inertia::render('SubFolder', ['id' => $id]);
+        return Inertia::render('FolderPage', ['id' => $id]);
     }
 }
