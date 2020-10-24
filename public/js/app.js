@@ -35818,7 +35818,7 @@ var BIconAlignTop=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODUL
 var BIconAlt=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('Alt','<path fill-rule="evenodd" d="M1 13.5a.5.5 0 0 0 .5.5h3.797a.5.5 0 0 0 .439-.26L11 3h3.5a.5.5 0 0 0 0-1h-3.797a.5.5 0 0 0-.439.26L5 13H1.5a.5.5 0 0 0-.5.5zm10 0a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5z"/>');// eslint-disable-next-line
 var BIconApp=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('App','<path fill-rule="evenodd" d="M11 2H5a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>');// eslint-disable-next-line
 var BIconAppIndicator=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('AppIndicator','<path fill-rule="evenodd" d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"/><path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>');// eslint-disable-next-line
-var BIconArchive=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('File','<path fill-rule="evenodd" d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>');// eslint-disable-next-line
+var BIconArchive=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('Archive','<path fill-rule="evenodd" d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>');// eslint-disable-next-line
 var BIconArchiveFill=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('ArchiveFill','<path fill-rule="evenodd" d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>');// eslint-disable-next-line
 var BIconArrow90degDown=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('Arrow90degDown','<path fill-rule="evenodd" d="M4.854 14.854a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V3.5A2.5 2.5 0 0 1 6.5 1h8a.5.5 0 0 1 0 1h-8A1.5 1.5 0 0 0 5 3.5v9.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4z"/>');// eslint-disable-next-line
 var BIconArrow90degLeft=/*#__PURE__*/Object(_helpers_make_icon__WEBPACK_IMPORTED_MODULE_0__["makeIcon"])('Arrow90degLeft','<path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>');// eslint-disable-next-line
@@ -53452,15 +53452,15 @@ Popper.Defaults = Defaults;
 
 "use strict";
 
- /*!
-  * portal-vue © Thorsten Lünborg, 2019
-  *
+ /*! 
+  * portal-vue © Thorsten Lünborg, 2019 
+  * 
   * Version: 2.1.7
-  *
-  * LICENCE: MIT
-  *
+  * 
+  * LICENCE: MIT 
+  * 
   * https://github.com/linusborg/portal-vue
-  *
+  * 
  */
 
 
@@ -54726,7 +54726,7 @@ function addStyle (obj, options) {
 	// If a transform function was defined, run it on the css
 	if (options.transform && obj.css) {
 	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css)
+		 ? options.transform(obj.css) 
 		 : options.transform.default(obj.css);
 
 	    if (result) {
@@ -67102,13 +67102,13 @@ module.exports = g;
 var map = {
 	"./FolderPage": [
 		"./resources/js/Pages/FolderPage.vue",
-		1,
-		0
+		0,
+		1
 	],
 	"./FolderPage.vue": [
 		"./resources/js/Pages/FolderPage.vue",
-		1,
-		0
+		0,
+		1
 	]
 };
 function webpackAsyncContext(req) {
