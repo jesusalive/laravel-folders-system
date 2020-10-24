@@ -3,11 +3,11 @@
         <div class="d-flex justify-content-between align-items-center">
             <h1>{{ folderName }}</h1>
             <div class="d-flex">
-                <button class="btn-sm btn-dark mr-2" v-b-modal.add-folder-modal>+ Pasta</button>
-                <button class="btn-sm btn-primary" v-b-modal.add-file-modal>+ Arquivo</button>
+                <button class="btn-sm btn-dark mr-2" v-b-modal.add-folder>+ Pasta</button>
+                <button class="btn-sm btn-primary" v-b-modal.add-file>+ Arquivo</button>
             </div>
             <b-modal
-                id="add-folder-modal"
+                id="add-folder"
                 centered
                 title="Adicionar Pasta"
                 ok-title="Criar"
@@ -24,7 +24,7 @@
                 </div>
             </b-modal>
             <b-modal
-                id="add-file-modal"
+                id="add-file"
                 centered
                 title="Adicionar Arquivo"
                 ok-title="Adicionar"

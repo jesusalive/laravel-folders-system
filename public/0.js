@@ -59,6 +59,40 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Mixins/handle-item-options */ "./resources/js/Mixins/handle-item-options.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -85,10 +119,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'name'],
+  data: function data() {
+    return {
+      loading: false,
+      newName: null
+    };
+  },
+  methods: {
+    renameFolder: function renameFolder() {
+      var _this = this;
+
+      this.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("/folders/".concat(this.id), {
+        name: this.newName
+      }).then(function (res) {
+        _this.folderName = _this.newName;
+        _this.showOptions = false;
+        _this.newName = null;
+
+        _this.$bvModal.hide('rename-folder');
+      })["finally"](function () {
+        _this.loading = false;
+      });
+    },
+    removeFolder: function removeFolder() {
+      var _this2 = this;
+
+      this.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/folders/".concat(this.id)).then(function (res) {
+        _this2.$emit('folderRemoved');
+      })["finally"](function () {
+        _this2.loading = false;
+      });
+    }
+  },
   mixins: [_Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  name: "Folder"
+  name: "Folder",
+  created: function created() {
+    this.folderName = this.name;
+  }
 });
 
 /***/ }),
@@ -271,6 +343,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_File__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/File */ "./resources/js/Components/File.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+//
 //
 //
 //
@@ -940,7 +1013,7 @@ var render = function() {
                 attrs: { icon: "folder", "font-scale": "3" }
               }),
               _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(_vm.name))])
+              _c("span", [_vm._v(_vm._s(_vm.folderName))])
             ],
             1
           ),
@@ -968,24 +1041,148 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm.showOptions ? _c("div", [_vm._m(0)]) : _vm._e()
-    ]
+      _vm.showOptions
+        ? _c("div", [
+            _c("ul", { staticClass: "ml-1 list-group" }, [
+              _c(
+                "li",
+                {
+                  directives: [
+                    {
+                      name: "b-modal",
+                      rawName: "v-b-modal.delete-folder",
+                      modifiers: { "delete-folder": true }
+                    }
+                  ],
+                  staticClass: "list-group-item"
+                },
+                [_vm._v("Excluir")]
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                {
+                  directives: [
+                    {
+                      name: "b-modal",
+                      rawName: "v-b-modal.rename-folder",
+                      modifiers: { "rename-folder": true }
+                    }
+                  ],
+                  staticClass: "list-group-item"
+                },
+                [_vm._v("Renomear")]
+              ),
+              _vm._v(" "),
+              _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          attrs: {
+            id: "rename-folder",
+            centered: "",
+            title: "Renomear Pasta",
+            "ok-title": "Confirmar",
+            "button-size": "sm",
+            "cancel-title": "Cancelar"
+          },
+          on: {
+            ok: function($event) {
+              $event.preventDefault()
+              return _vm.renameFolder()
+            }
+          }
+        },
+        [
+          !_vm.loading
+            ? _c("div", [
+                _c("label", { attrs: { for: "folder-name" } }, [
+                  _vm._v("Nome:")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newName,
+                      expression: "newName"
+                    }
+                  ],
+                  staticClass: "ml-2 px-1",
+                  attrs: { type: "text", id: "folder-name" },
+                  domProps: { value: _vm.newName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.newName = $event.target.value
+                    }
+                  }
+                })
+              ])
+            : _c("div", [_vm._v("\n            Carregando...\n        ")])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          attrs: {
+            id: "delete-folder",
+            centered: "",
+            title: "Remover pasta",
+            "hide-footer": ""
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "d-flex flex-column justify-content-center text-center"
+            },
+            [
+              _c("span", [
+                _vm._v(
+                  "Tem certeza que deseja remover essa pasta e o seu conteúdo?"
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.removeFolder()
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.loading ? "Carregando..." : "Sim, apagar") +
+                        "\n                "
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        ]
+      )
+    ],
+    1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "ml-1 list-group" }, [
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Excluir")]),
-      _vm._v(" "),
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Renomear")]),
-      _vm._v(" "),
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1021,8 +1218,8 @@ var render = function() {
               directives: [
                 {
                   name: "b-modal",
-                  rawName: "v-b-modal.add-folder-modal",
-                  modifiers: { "add-folder-modal": true }
+                  rawName: "v-b-modal.add-folder",
+                  modifiers: { "add-folder": true }
                 }
               ],
               staticClass: "btn-sm btn-dark mr-2"
@@ -1036,8 +1233,8 @@ var render = function() {
               directives: [
                 {
                   name: "b-modal",
-                  rawName: "v-b-modal.add-file-modal",
-                  modifiers: { "add-file-modal": true }
+                  rawName: "v-b-modal.add-file",
+                  modifiers: { "add-file": true }
                 }
               ],
               staticClass: "btn-sm btn-primary"
@@ -1050,7 +1247,7 @@ var render = function() {
           "b-modal",
           {
             attrs: {
-              id: "add-folder-modal",
+              id: "add-folder",
               centered: "",
               title: "Adicionar Pasta",
               "ok-title": "Criar",
@@ -1103,7 +1300,7 @@ var render = function() {
           "b-modal",
           {
             attrs: {
-              id: "add-file-modal",
+              id: "add-file",
               centered: "",
               title: "Adicionar Arquivo",
               "ok-title": "Adicionar",
@@ -1288,7 +1485,12 @@ var render = function() {
                               _vm._l(_vm.folders, function(folder) {
                                 return _c("folder", {
                                   key: folder.id,
-                                  attrs: { id: folder.id, name: folder.name }
+                                  attrs: { id: folder.id, name: folder.name },
+                                  on: {
+                                    folderRemoved: function($event) {
+                                      return _vm.loadData()
+                                    }
+                                  }
                                 })
                               }),
                               _vm._v(" "),

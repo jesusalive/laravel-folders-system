@@ -14,6 +14,7 @@
                 <div class="mt-5">
                     <div v-if="folders.length || files.length" class="d-flex flex-wrap">
                         <folder
+                            @folderRemoved="loadData()"
                             v-for="folder of folders"
                             :key="folder.id"
                             :id="folder.id"

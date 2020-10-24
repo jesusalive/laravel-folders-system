@@ -10,7 +10,7 @@ class AddFileService
     public function __invoke(UploadedFile $file, $folderId)
     {
         $fileName = $file->getClientOriginalName();
-        $path = $file->store('public/uploads');
+        $path = $file->store("public/uploads/folder$folderId");
 
         return File::create([
             'name' => $fileName,

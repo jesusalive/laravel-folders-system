@@ -11,30 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Services/File/AddFileService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/File.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Mixins/handle-item-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/File/DeleteFileService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/Folder/DeleteFolderService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/Folder/UpdateFolderService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Folder/FolderResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Folder/FolderResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Folder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Folder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_23_225915_create_archives_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_23_225915_create_files_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FoldersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FoldersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/File/AddFileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/File/AddFileService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Folder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Folder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderContent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Loading.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/SubFolder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +166,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Services/Folder" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,13 +177,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Services/Folder" />
+      <recent name="$PROJECT_DIR$/public/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/Components" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/Components" />
       <recent name="$PROJECT_DIR$/app/Http/Services/Application" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -215,7 +203,7 @@
       <updated>1603454160333</updated>
       <workItem from="1603454161431" duration="5384000" />
       <workItem from="1603493932564" duration="14257000" />
-      <workItem from="1603535725635" duration="11113000" />
+      <workItem from="1603535725635" duration="14462000" />
     </task>
     <servers />
   </component>
@@ -238,19 +226,19 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="496" y="172" width="355" height="443" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1603539224531" />
-    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603543928624">
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603549217674">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603543928624" />
+    <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603549217674" />
     <state x="693" y="298" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603456734302" />
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl" timestamp="1603474308732">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603474308732" />
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603540434580">
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603548886497">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603540434580" />
+    <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1603548886497" />
     <state x="374" y="136" width="618" height="522" key="find.popup" timestamp="1603540407899">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
