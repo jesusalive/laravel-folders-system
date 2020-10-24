@@ -21,6 +21,7 @@
                             :name="folder.name"
                         />
                         <file
+                            @fileRemoved="loadData()"
                             v-for="file of files"
                             :key="file.id"
                             :file="file"

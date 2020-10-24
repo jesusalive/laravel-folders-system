@@ -64,6 +64,7 @@ export default {
     data () {
         return {
             loading: false,
+            folderName: null,
             newName: null
         }
     },

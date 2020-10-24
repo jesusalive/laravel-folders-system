@@ -12,6 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Mixins/handle-item-options */ "./resources/js/Mixins/handle-item-options.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -34,15 +36,86 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['file'],
   mixins: [_Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      loading: false,
+      fileName: null,
+      newName: null
+    };
+  },
   computed: {
     uploadedDate: function uploadedDate() {
       return "Upload em ".concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(this.file.created_at).format('DD/MM/YYYY HH:mm'));
     }
+  },
+  methods: {
+    renameFile: function renameFile() {
+      var _this = this;
+
+      this.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/files/".concat(this.file.id), {
+        name: this.newName
+      }).then(function (res) {
+        _this.fileName = res.data.data.name;
+        _this.showOptions = false;
+        _this.newName = null;
+
+        _this.$bvModal.hide('rename-file');
+      })["finally"](function () {
+        _this.loading = false;
+      });
+    },
+    removeFile: function removeFile() {
+      var _this2 = this;
+
+      this.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/files/".concat(this.file.id)).then(function (res) {
+        _this2.$emit('fileRemoved');
+      })["finally"](function () {
+        _this2.loading = false;
+      });
+    }
+  },
+  created: function created() {
+    this.fileName = this.file.name;
   },
   name: "File"
 });
@@ -125,6 +198,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       loading: false,
+      folderName: null,
       newName: null
     };
   },
@@ -343,6 +417,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_File__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/File */ "./resources/js/Components/File.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+//
 //
 //
 //
@@ -923,7 +998,7 @@ var render = function() {
               attrs: { icon: "file-earmark", "font-scale": "3" }
             }),
             _vm._v(" "),
-            _c("span", [_vm._v(_vm._s(_vm.file.name))]),
+            _c("span", [_vm._v(_vm._s(_vm.fileName))]),
             _vm._v(" "),
             _c("small", { staticClass: "data-upload" }, [
               _vm._v(_vm._s(_vm.uploadedDate))
@@ -953,24 +1028,144 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm.showOptions ? _c("div", [_vm._m(0)]) : _vm._e()
-    ]
+      _vm.showOptions
+        ? _c("div", [
+            _c("ul", { staticClass: "ml-1 list-group" }, [
+              _c(
+                "li",
+                {
+                  directives: [
+                    {
+                      name: "b-modal",
+                      rawName: "v-b-modal.delete-file",
+                      modifiers: { "delete-file": true }
+                    }
+                  ],
+                  staticClass: "list-group-item"
+                },
+                [_vm._v("Excluir")]
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                {
+                  directives: [
+                    {
+                      name: "b-modal",
+                      rawName: "v-b-modal.rename-file",
+                      modifiers: { "rename-file": true }
+                    }
+                  ],
+                  staticClass: "list-group-item"
+                },
+                [_vm._v("Renomear")]
+              ),
+              _vm._v(" "),
+              _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          attrs: {
+            id: "rename-file",
+            centered: "",
+            title: "Renomear Arquivo",
+            "ok-title": "Confirmar",
+            "button-size": "sm",
+            "cancel-title": "Cancelar"
+          },
+          on: {
+            ok: function($event) {
+              $event.preventDefault()
+              return _vm.renameFile()
+            }
+          }
+        },
+        [
+          !_vm.loading
+            ? _c("div", [
+                _c("label", { attrs: { for: "file-name" } }, [_vm._v("Nome:")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newName,
+                      expression: "newName"
+                    }
+                  ],
+                  staticClass: "ml-2 px-1",
+                  attrs: { type: "text", id: "file-name" },
+                  domProps: { value: _vm.newName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.newName = $event.target.value
+                    }
+                  }
+                })
+              ])
+            : _c("div", [_vm._v("\n            Carregando...\n        ")])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          attrs: {
+            id: "delete-file",
+            centered: "",
+            title: "Remover arquivo",
+            "hide-footer": ""
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "d-flex flex-column justify-content-center text-center"
+            },
+            [
+              _c("span", [
+                _vm._v("Tem certeza que deseja remover esse arquivo?")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.removeFile()
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.loading ? "Carregando..." : "Sim, apagar") +
+                        "\n                "
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        ]
+      )
+    ],
+    1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "ml-1 list-group" }, [
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Excluir")]),
-      _vm._v(" "),
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Renomear")]),
-      _vm._v(" "),
-      _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1497,7 +1692,12 @@ var render = function() {
                               _vm._l(_vm.files, function(file) {
                                 return _c("file", {
                                   key: file.id,
-                                  attrs: { file: file }
+                                  attrs: { file: file },
+                                  on: {
+                                    fileRemoved: function($event) {
+                                      return _vm.loadData()
+                                    }
+                                  }
                                 })
                               })
                             ],

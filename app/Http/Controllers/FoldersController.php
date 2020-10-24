@@ -40,7 +40,7 @@ class FoldersController extends Controller
     public function delete($id)
     {
         try {
-            ((new DeleteFolderService())($id));
+            (new DeleteFolderService())($id);
             return response()->json(['data' => ['message' => 'Deleted']]);
         } catch (ModelNotFoundException $e) {
             return response()->json(new ErrorResource('Folder not found'), 400);

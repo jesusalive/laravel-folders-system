@@ -6,6 +6,7 @@ use App\Http\Resources\Application\ErrorResource;
 use App\Http\Resources\File\FileResource;
 use App\Http\Services\File\AddFileService;
 use App\Http\Services\File\DeleteFileService;
+use App\Http\Services\File\UpdateFileService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -18,12 +19,19 @@ class FilesController extends Controller
     }
 
     public function update($id, Request $request)
-    {}
+    {
+        try {
+            $data = (new UpdateFileService())($id, $request->all());
+            return new FileResource($data);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(new ErrorResource('File not found'), 400);
+        }
+    }
 
     public function delete($id)
     {
         try {
-            ((new DeleteFileService())($id));
+            (new DeleteFileService())($id);
             return response()->json(['data' => ['message' => 'Deleted']]);
         } catch (ModelNotFoundException $e) {
             return response()->json(new ErrorResource('File not found'), 400);
