@@ -1,9 +1,11 @@
 <template>
-    <div class="d-flex" :class="{'mr-5': !showOptions}">
+    <div class="d-flex">
         <div class="position-relative">
             <div class="d-flex flex-column justify-content-center text-center cursor-pointer folder-item">
-                <b-icon icon="file-earmark" class="text-muted mx-auto" font-scale="3" />
-                <span>{{ fileName }}</span>
+                <div class="text-center">
+                    <b-icon icon="file-earmark" class="text-muted" font-scale="3" />
+                </div>
+                <span>{{ file.name }}</span>
                 <small class="data-upload">{{ uploadedDate }}</small>
             </div>
             <div @click="toogleOptions()" class="folder-item-options bg-primary rounded px-1 cursor-pointer">
@@ -14,7 +16,7 @@
             <ul class="ml-1 list-group">
                 <li class="list-group-item" v-b-modal.delete-file>Excluir</li>
                 <li class="list-group-item" v-b-modal.rename-file>Renomear</li>
-                <li class="list-group-item">Mover</li>
+                <li class="list-group-item" v-b-modal.move-file>Mover</li>
                 <li class="list-group-item" @click="downloadFile()">Download</li>
             </ul>
         </div>
@@ -50,22 +52,30 @@
                 </div>
             </div>
         </b-modal>
+        <select-folder-modal
+            modalId="move-file"
+            title="Mover arquivo para"
+            :loading="loadingMove"
+            :ok-function="moveFile"
+        />
     </div>
 </template>
 
 <script>
 import HandleItemOptions from '../Mixins/handle-item-options'
+import SelectFolderModal from "./SelectFolderModal";
 import moment from 'moment'
 import FileDownloader from 'js-file-download'
 import axios from "axios"
 
 export default {
+    components: {SelectFolderModal},
     props: ['file'],
     mixins: [HandleItemOptions],
     data () {
         return {
             loading: false,
-            fileName: null,
+            loadingMove: false,
             newName: null
         }
     },
@@ -75,14 +85,26 @@ export default {
         }
     },
     methods: {
+        moveFile (folderId) {
+            this.loadingMove = true
+            axios.put(`/files/${this.file.id}`, { folder_id: folderId })
+            .then(({data}) => {
+                console.log(data)
+                this.$emit('needsReload')
+            })
+            .catch(err => {
+                console.log(err.response.data)
+            })
+            .finally(() => {
+                this.loadingMove = false
+            })
+        },
         renameFile () {
             this.loading = true
             axios.put(`/files/${this.file.id}`, { name: this.newName })
                 .then((res) => {
-                    this.fileName = res.data.data.name
-                    this.showOptions = false
+                    this.$emit('needsReload')
                     this.newName = null
-                    this.$bvModal.hide('rename-file')
                 })
                 .finally(() => {
                     this.loading = false
@@ -92,7 +114,7 @@ export default {
             this.loading = true
             axios.delete(`/files/${this.file.id}`)
                 .then((res) => {
-                    this.$emit('fileRemoved')
+                    this.$emit('needsReload')
                 })
                 .finally(() => {
                     this.loading = false
@@ -111,9 +133,6 @@ export default {
 
             this.showOptions = false
         }
-    },
-    created () {
-        this.fileName = this.file.name
     },
     name: "File"
 }

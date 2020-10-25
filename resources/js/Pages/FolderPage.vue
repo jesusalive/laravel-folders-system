@@ -12,19 +12,23 @@
                     :folder-name="folderName"
                 />
                 <div class="mt-5">
-                    <div v-if="folders.length || files.length" class="d-flex flex-wrap">
+                    <div
+                        v-if="folders.length || files.length"
+                        class="row justify-content-center justify-content-md-start"
+                    >
                         <folder
-                            @folderRemoved="loadData()"
+                            @needsReload="loadData()"
                             v-for="folder of folders"
                             :key="`Folder${folder.id}`"
-                            :id="folder.id"
-                            :name="folder.name"
+                            :folder="folder"
+                            class="col-6 col-md-2 mb-4 justify-content-center"
                         />
                         <file
-                            @fileRemoved="loadData()"
+                            @needsReload="loadData()"
                             v-for="file of files"
                             :key="`File${file.id}`"
                             :file="file"
+                            class="col-6 col-md-2 mb-4 justify-content-center"
                         />
                     </div>
                     <div v-else>

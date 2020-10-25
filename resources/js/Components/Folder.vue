@@ -1,13 +1,15 @@
 <template>
-    <div class="d-flex" :class="[showOptions ? 'mr-2' : 'mr-5']">
+    <div class="d-flex">
         <div class="position-relative">
             <inertia-link
                 as="div"
-                :href="`/subfolder/${id}`"
-                class="d-flex flex-column text-center cursor-pointer folder-item"
+                :href="`/subfolder/${folder.id}`"
+                class="d-flex flex-column justify-content-center text-center cursor-pointer folder-item"
             >
-                <b-icon icon="folder" class="text-warning" font-scale="3" />
-                <span>{{ folderName }}</span>
+                <div class="text-center">
+                    <b-icon icon="folder" class="text-warning" font-scale="3" />
+                </div>
+                <span>{{ folder.name }}</span>
             </inertia-link>
             <div @click="toogleOptions()" class="folder-item-options bg-primary rounded px-1 cursor-pointer">
                 <b-icon icon="three-dots" class="text-light" />
@@ -60,23 +62,20 @@ import HandleItemOptions from "../Mixins/handle-item-options"
 import axios from 'axios'
 
 export default {
-    props: ['id', 'name'],
+    props: ['folder'],
     data () {
         return {
             loading: false,
-            folderName: null,
             newName: null
         }
     },
     methods: {
         renameFolder () {
             this.loading = true
-            axios.put(`/folders/${this.id}`, { name: this.newName })
+            axios.put(`/folders/${this.folder.id}`, { name: this.newName })
                 .then((res) => {
-                    this.folderName = this.newName
-                    this.showOptions = false
+                    this.$emit('needsReload')
                     this.newName = null
-                    this.$bvModal.hide('rename-folder')
                 })
                 .finally(() => {
                     this.loading = false
@@ -84,9 +83,9 @@ export default {
         },
         removeFolder () {
             this.loading = true
-            axios.delete(`/folders/${this.id}`)
+            axios.delete(`/folders/${this.folder.id}`)
                 .then((res) => {
-                    this.$emit('folderRemoved')
+                    this.$emit('needsReload')
                 })
                 .finally(() => {
                     this.loading = false
@@ -94,10 +93,7 @@ export default {
         }
     },
     mixins: [HandleItemOptions],
-    name: "Folder",
-    created () {
-        this.folderName = this.name
-    }
+    name: "Folder"
 }
 </script>
 
