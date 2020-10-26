@@ -14,7 +14,7 @@
                 <div class="mt-5">
                     <div
                         v-if="folders.length || files.length"
-                        class="row justify-content-center justify-content-md-start"
+                        class="row justify-content-start"
                     >
                         <folder
                             @needsReload="loadData()"

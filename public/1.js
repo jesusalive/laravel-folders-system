@@ -2239,10 +2239,7 @@ var render = function() {
                       _vm.folders.length || _vm.files.length
                         ? _c(
                             "div",
-                            {
-                              staticClass:
-                                "row justify-content-center justify-content-md-start"
-                            },
+                            { staticClass: "row justify-content-start" },
                             [
                               _vm._l(_vm.folders, function(folder) {
                                 return _c("folder", {

@@ -11,13 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/File.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Folder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Folder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderTree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderTree.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderTreeContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderTreeContent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/SelectFolderModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SelectFolderModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +198,7 @@
       <workItem from="1603632314132" duration="6062000" />
       <workItem from="1603645207612" duration="8939000" />
       <workItem from="1603660691759" duration="627000" />
-      <workItem from="1603670475110" duration="3520000" />
+      <workItem from="1603670475110" duration="3699000" />
     </task>
     <servers />
   </component>
