@@ -56,7 +56,6 @@
             :modal-id="`move-file-${this.file.id}`"
             title="Mover arquivo para"
             :loading="loadingMove"
-            :folder-id-to-disable="this.file.folderId"
             :ok-function="moveFile"
         />
     </div>

@@ -80,7 +80,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -1485,7 +1484,6 @@ var render = function() {
           "modal-id": "move-file-" + this.file.id,
           title: "Mover arquivo para",
           loading: _vm.loadingMove,
-          "folder-id-to-disable": this.file.folderId,
           "ok-function": _vm.moveFile
         }
       })
