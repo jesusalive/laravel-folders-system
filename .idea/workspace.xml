@@ -12,10 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/File.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Services/File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -202,7 +198,9 @@
       <workItem from="1603632314132" duration="6062000" />
       <workItem from="1603645207612" duration="8939000" />
       <workItem from="1603660691759" duration="627000" />
-      <workItem from="1603670475110" duration="3933000" />
+      <workItem from="1603670475110" duration="4052000" />
+      <workItem from="1603711291420" duration="135000" />
+      <workItem from="1603711726145" duration="748000" />
     </task>
     <servers />
   </component>
@@ -235,10 +233,10 @@
     </state>
     <state x="493" y="218" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603549217674" />
     <state x="693" y="298" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603456734302" />
-    <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl" timestamp="1603474308732">
+    <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl" timestamp="1603711424130">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603474308732" />
+    <state x="743" y="298" width="424" height="480" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1603711424130" />
     <state x="325" y="117" width="761" height="557" key="NewPhpClassDialog" timestamp="1603552383495">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

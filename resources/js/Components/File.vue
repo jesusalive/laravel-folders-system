@@ -124,7 +124,7 @@ export default {
                 method: 'GET',
                 responseType: 'blob',
             }).then((response) => {
-                FileDownloader(new Blob([response.data]), this.fileName)
+                FileDownloader(new Blob([response.data]), this.file.name)
             })
 
             this.showOptions = false
