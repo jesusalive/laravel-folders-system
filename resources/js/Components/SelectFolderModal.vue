@@ -10,7 +10,11 @@
         :ok-disabled="!folderSelected"
     >
         <div v-if="!loading && !innerLoading">
-            <folder-tree :folder="folders" @folderSelected="folderSelected = $event" />
+            <folder-tree
+                :folder="folders"
+                :folder-id-to-disable="folderIdToDisable"
+                @folderSelected="folderSelected = $event"
+            />
         </div>
         <div v-else>
             Carregando...
@@ -24,7 +28,7 @@ import FolderTree from "./FolderTree";
 
 export default {
     components: {FolderTree},
-    props: ['modalId', 'title', 'okFunction', 'loading'],
+    props: ['modalId', 'title', 'okFunction', 'loading', 'folderIdToDisable'],
     data () {
         return {
             innerLoading: true,

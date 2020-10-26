@@ -1,11 +1,17 @@
 <template>
     <ul>
         <li v-for="child in children">
-            <folder-tree @folderSelected="emitFolderSelected" v-if="child.folders.length" :folder="child"/>
+            <folder-tree
+                v-if="child.folders.length && folderIdToDisable != child.id"
+                :folder-id-to-disable="folderIdToDisable"
+                @folderSelected="emitFolderSelected"
+                :folder="child"
+            />
             <div v-else>
                 <input
                     :id="`folder-${child.id}`"
                     @input="emitFolderSelected(child.id)"
+                    v-if="folderIdToDisable != child.id"
                     type="radio"
                     name="folder"
                 />
@@ -27,7 +33,7 @@ export default {
     components: {
         FolderTree: () => import("./FolderTree")
     },
-    props: ['children'],
+    props: ['children', 'folderIdToDisable'],
 
 }
 </script>

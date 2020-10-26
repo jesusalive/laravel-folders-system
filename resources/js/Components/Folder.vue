@@ -17,13 +17,13 @@
         </div>
         <div v-if="showOptions">
             <ul class="ml-1 list-group">
-                <li class="list-group-item" v-b-modal.delete-folder>Excluir</li>
-                <li class="list-group-item" v-b-modal.rename-folder>Renomear</li>
-                <li class="list-group-item">Mover</li>
+                <li class="list-group-item" v-b-modal="`delete-folder-${this.folder.id}`">Excluir</li>
+                <li class="list-group-item" v-b-modal="`rename-folder-${this.folder.id}`">Renomear</li>
+                <li class="list-group-item" v-b-modal="`move-folder-${this.folder.id}`">Mover</li>
             </ul>
         </div>
         <b-modal
-            id="rename-folder"
+            :id="`rename-folder-${this.folder.id}`"
             centered
             title="Renomear Pasta"
             ok-title="Confirmar"
@@ -40,7 +40,7 @@
             </div>
         </b-modal>
         <b-modal
-            id="delete-folder"
+            :id="`delete-folder-${this.folder.id}`"
             centered
             title="Remover pasta"
             hide-footer
@@ -54,22 +54,42 @@
                 </div>
             </div>
         </b-modal>
+        <select-folder-modal
+            :modal-id="`move-folder-${this.folder.id}`"
+            title="Mover pasta para"
+            :loading="loadingMove"
+            :folder-id-to-disable="folder.id"
+            :ok-function="moveFolder"
+        />
     </div>
 </template>
 
 <script>
 import HandleItemOptions from "../Mixins/handle-item-options"
 import axios from 'axios'
+import SelectFolderModal from "./SelectFolderModal"
 
 export default {
+    components: {SelectFolderModal},
     props: ['folder'],
     data () {
         return {
+            loadingMove: false,
             loading: false,
             newName: null
         }
     },
     methods: {
+        moveFolder (selectedFolder) {
+            this.loadingMove = true
+            axios.put(`/folders/${this.folder.id}`, { belongs_to_folder: selectedFolder })
+                .then(() => {
+                    this.$emit('needsReload')
+                })
+                .finally(() => {
+                    this.loadingMove = false
+                })
+        },
         renameFolder () {
             this.loading = true
             axios.put(`/folders/${this.folder.id}`, { name: this.newName })

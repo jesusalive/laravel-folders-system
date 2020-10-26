@@ -14,14 +14,14 @@
         </div>
         <div v-if="showOptions">
             <ul class="ml-1 list-group">
-                <li class="list-group-item" v-b-modal.delete-file>Excluir</li>
-                <li class="list-group-item" v-b-modal.rename-file>Renomear</li>
-                <li class="list-group-item" v-b-modal.move-file>Mover</li>
+                <li class="list-group-item" v-b-modal="`delete-file-${this.file.id}`">Excluir</li>
+                <li class="list-group-item" v-b-modal="`rename-file-${this.file.id}`">Renomear</li>
+                <li class="list-group-item" v-b-modal="`move-file-${this.file.id}`">Mover</li>
                 <li class="list-group-item" @click="downloadFile()">Download</li>
             </ul>
         </div>
         <b-modal
-            id="rename-file"
+            :id="`rename-file-${this.file.id}`"
             centered
             title="Renomear Arquivo"
             ok-title="Confirmar"
@@ -38,7 +38,7 @@
             </div>
         </b-modal>
         <b-modal
-            id="delete-file"
+            :id="`delete-file-${this.file.id}`"
             centered
             title="Remover arquivo"
             hide-footer
@@ -53,9 +53,10 @@
             </div>
         </b-modal>
         <select-folder-modal
-            modalId="move-file"
+            :modal-id="`move-file-${this.file.id}`"
             title="Mover arquivo para"
             :loading="loadingMove"
+            :folder-id-to-disable="this.file.folderId"
             :ok-function="moveFile"
         />
     </div>
@@ -88,12 +89,8 @@ export default {
         moveFile (folderId) {
             this.loadingMove = true
             axios.put(`/files/${this.file.id}`, { folder_id: folderId })
-            .then(({data}) => {
-                console.log(data)
+            .then(() => {
                 this.$emit('needsReload')
-            })
-            .catch(err => {
-                console.log(err.response.data)
             })
             .finally(() => {
                 this.loadingMove = false

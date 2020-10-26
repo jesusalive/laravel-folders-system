@@ -80,6 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -110,13 +111,8 @@ __webpack_require__.r(__webpack_exports__);
       this.loadingMove = true;
       axios__WEBPACK_IMPORTED_MODULE_4___default.a.put("/files/".concat(this.file.id), {
         folder_id: folderId
-      }).then(function (_ref) {
-        var data = _ref.data;
-        console.log(data);
-
+      }).then(function () {
         _this.$emit('needsReload');
-      })["catch"](function (err) {
-        console.log(err.response.data);
       })["finally"](function () {
         _this.loadingMove = false;
       });
@@ -176,6 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Mixins_handle_item_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Mixins/handle-item-options */ "./resources/js/Mixins/handle-item-options.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SelectFolderModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectFolderModal */ "./resources/js/Components/SelectFolderModal.vue");
 //
 //
 //
@@ -235,39 +232,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    SelectFolderModal: _SelectFolderModal__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: ['folder'],
   data: function data() {
     return {
+      loadingMove: false,
       loading: false,
       newName: null
     };
   },
   methods: {
-    renameFolder: function renameFolder() {
+    moveFolder: function moveFolder(selectedFolder) {
       var _this = this;
+
+      this.loadingMove = true;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("/folders/".concat(this.folder.id), {
+        belongs_to_folder: selectedFolder
+      }).then(function () {
+        _this.$emit('needsReload');
+      })["finally"](function () {
+        _this.loadingMove = false;
+      });
+    },
+    renameFolder: function renameFolder() {
+      var _this2 = this;
 
       this.loading = true;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("/folders/".concat(this.folder.id), {
         name: this.newName
       }).then(function (res) {
-        _this.$emit('needsReload');
+        _this2.$emit('needsReload');
 
-        _this.newName = null;
+        _this2.newName = null;
       })["finally"](function () {
-        _this.loading = false;
+        _this2.loading = false;
       });
     },
     removeFolder: function removeFolder() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.loading = true;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/folders/".concat(this.folder.id)).then(function (res) {
-        _this2.$emit('needsReload');
+        _this3.$emit('needsReload');
       })["finally"](function () {
-        _this2.loading = false;
+        _this3.loading = false;
       });
     }
   },
@@ -410,6 +431,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -418,7 +450,18 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     FolderTreeContent: _FolderTreeContent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['folder']
+  methods: {
+    folderHasChildDisabled: function folderHasChildDisabled() {
+      var _this = this;
+
+      var hasChildDisabled = false;
+      this.folder.folders.map(function (folder) {
+        if (folder.id == _this.folderIdToDisable) hasChildDisabled = true;
+      });
+      return hasChildDisabled;
+    }
+  },
+  props: ['folder', 'folderIdToDisable']
 });
 
 /***/ }),
@@ -453,6 +496,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FolderTreeContent",
@@ -462,7 +511,7 @@ __webpack_require__.r(__webpack_exports__);
       return Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./FolderTree */ "./resources/js/Components/FolderTree.vue"));
     }
   },
-  props: ['children']
+  props: ['children', 'folderIdToDisable']
 });
 
 /***/ }),
@@ -523,13 +572,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     FolderTree: _FolderTree__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: ['modalId', 'title', 'okFunction', 'loading'],
+  props: ['modalId', 'title', 'okFunction', 'loading', 'folderIdToDisable'],
   data: function data() {
     return {
       innerLoading: true,
@@ -1273,8 +1326,9 @@ var render = function() {
                   directives: [
                     {
                       name: "b-modal",
-                      rawName: "v-b-modal.delete-file",
-                      modifiers: { "delete-file": true }
+                      rawName: "v-b-modal",
+                      value: "delete-file-" + this.file.id,
+                      expression: "`delete-file-${this.file.id}`"
                     }
                   ],
                   staticClass: "list-group-item"
@@ -1288,8 +1342,9 @@ var render = function() {
                   directives: [
                     {
                       name: "b-modal",
-                      rawName: "v-b-modal.rename-file",
-                      modifiers: { "rename-file": true }
+                      rawName: "v-b-modal",
+                      value: "rename-file-" + this.file.id,
+                      expression: "`rename-file-${this.file.id}`"
                     }
                   ],
                   staticClass: "list-group-item"
@@ -1303,8 +1358,9 @@ var render = function() {
                   directives: [
                     {
                       name: "b-modal",
-                      rawName: "v-b-modal.move-file",
-                      modifiers: { "move-file": true }
+                      rawName: "v-b-modal",
+                      value: "move-file-" + this.file.id,
+                      expression: "`move-file-${this.file.id}`"
                     }
                   ],
                   staticClass: "list-group-item"
@@ -1332,7 +1388,7 @@ var render = function() {
         "b-modal",
         {
           attrs: {
-            id: "rename-file",
+            id: "rename-file-" + this.file.id,
             centered: "",
             title: "Renomear Arquivo",
             "ok-title": "Confirmar",
@@ -1381,7 +1437,7 @@ var render = function() {
         "b-modal",
         {
           attrs: {
-            id: "delete-file",
+            id: "delete-file-" + this.file.id,
             centered: "",
             title: "Remover arquivo",
             "hide-footer": ""
@@ -1426,9 +1482,10 @@ var render = function() {
       _vm._v(" "),
       _c("select-folder-modal", {
         attrs: {
-          modalId: "move-file",
+          "modal-id": "move-file-" + this.file.id,
           title: "Mover arquivo para",
           loading: _vm.loadingMove,
+          "folder-id-to-disable": this.file.folderId,
           "ok-function": _vm.moveFile
         }
       })
@@ -1522,8 +1579,9 @@ var render = function() {
                   directives: [
                     {
                       name: "b-modal",
-                      rawName: "v-b-modal.delete-folder",
-                      modifiers: { "delete-folder": true }
+                      rawName: "v-b-modal",
+                      value: "delete-folder-" + this.folder.id,
+                      expression: "`delete-folder-${this.folder.id}`"
                     }
                   ],
                   staticClass: "list-group-item"
@@ -1537,8 +1595,9 @@ var render = function() {
                   directives: [
                     {
                       name: "b-modal",
-                      rawName: "v-b-modal.rename-folder",
-                      modifiers: { "rename-folder": true }
+                      rawName: "v-b-modal",
+                      value: "rename-folder-" + this.folder.id,
+                      expression: "`rename-folder-${this.folder.id}`"
                     }
                   ],
                   staticClass: "list-group-item"
@@ -1546,7 +1605,21 @@ var render = function() {
                 [_vm._v("Renomear")]
               ),
               _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [_vm._v("Mover")])
+              _c(
+                "li",
+                {
+                  directives: [
+                    {
+                      name: "b-modal",
+                      rawName: "v-b-modal",
+                      value: "move-folder-" + this.folder.id,
+                      expression: "`move-folder-${this.folder.id}`"
+                    }
+                  ],
+                  staticClass: "list-group-item"
+                },
+                [_vm._v("Mover")]
+              )
             ])
           ])
         : _vm._e(),
@@ -1555,7 +1628,7 @@ var render = function() {
         "b-modal",
         {
           attrs: {
-            id: "rename-folder",
+            id: "rename-folder-" + this.folder.id,
             centered: "",
             title: "Renomear Pasta",
             "ok-title": "Confirmar",
@@ -1606,7 +1679,7 @@ var render = function() {
         "b-modal",
         {
           attrs: {
-            id: "delete-folder",
+            id: "delete-folder-" + this.folder.id,
             centered: "",
             title: "Remover pasta",
             "hide-footer": ""
@@ -1649,7 +1722,17 @@ var render = function() {
             ]
           )
         ]
-      )
+      ),
+      _vm._v(" "),
+      _c("select-folder-modal", {
+        attrs: {
+          "modal-id": "move-folder-" + this.folder.id,
+          title: "Mover pasta para",
+          loading: _vm.loadingMove,
+          "folder-id-to-disable": _vm.folder.id,
+          "ok-function": _vm.moveFolder
+        }
+      })
     ],
     1
   )
@@ -1833,14 +1916,20 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("input", {
-        attrs: { id: "folder-" + _vm.folder.id, type: "radio", name: "folder" },
-        on: {
-          input: function($event) {
-            return _vm.emitFolderSelected(_vm.folder.id)
-          }
-        }
-      }),
+      _vm.folderIdToDisable != _vm.folder.id && !_vm.folderHasChildDisabled()
+        ? _c("input", {
+            attrs: {
+              id: "folder-" + _vm.folder.id,
+              type: "radio",
+              name: "folder"
+            },
+            on: {
+              input: function($event) {
+                return _vm.emitFolderSelected(_vm.folder.id)
+              }
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "label",
@@ -1856,10 +1945,15 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("folder-tree-content", {
-        attrs: { children: _vm.folder.folders },
-        on: { folderSelected: _vm.emitFolderSelected }
-      })
+      _vm.folderIdToDisable != _vm.folder.id
+        ? _c("folder-tree-content", {
+            attrs: {
+              "folder-id-to-disable": _vm.folderIdToDisable,
+              children: _vm.folder.folders
+            },
+            on: { folderSelected: _vm.emitFolderSelected }
+          })
+        : _vm._e()
     ],
     1
   )
@@ -1892,24 +1986,29 @@ var render = function() {
       return _c(
         "li",
         [
-          child.folders.length
+          child.folders.length && _vm.folderIdToDisable != child.id
             ? _c("folder-tree", {
-                attrs: { folder: child },
+                attrs: {
+                  "folder-id-to-disable": _vm.folderIdToDisable,
+                  folder: child
+                },
                 on: { folderSelected: _vm.emitFolderSelected }
               })
             : _c("div", [
-                _c("input", {
-                  attrs: {
-                    id: "folder-" + child.id,
-                    type: "radio",
-                    name: "folder"
-                  },
-                  on: {
-                    input: function($event) {
-                      return _vm.emitFolderSelected(child.id)
-                    }
-                  }
-                }),
+                _vm.folderIdToDisable != child.id
+                  ? _c("input", {
+                      attrs: {
+                        id: "folder-" + child.id,
+                        type: "radio",
+                        name: "folder"
+                      },
+                      on: {
+                        input: function($event) {
+                          return _vm.emitFolderSelected(child.id)
+                        }
+                      }
+                    })
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "label",
@@ -2020,7 +2119,10 @@ var render = function() {
             "div",
             [
               _c("folder-tree", {
-                attrs: { folder: _vm.folders },
+                attrs: {
+                  folder: _vm.folders,
+                  "folder-id-to-disable": _vm.folderIdToDisable
+                },
                 on: {
                   folderSelected: function($event) {
                     _vm.folderSelected = $event

@@ -11,16 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe0a81d9-d692-4d3b-9e71-34469495665f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/FolderTree.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/FolderTreeContent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/SelectFolderModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Mixins/emit-folder-selected-event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/File/UpdateFileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/File/UpdateFileService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/File.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Folder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Folder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/FolderPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderTree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderTree.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/FolderTreeContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/FolderTreeContent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/SelectFolderModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SelectFolderModal.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +202,9 @@
       <workItem from="1603535725635" duration="20846000" />
       <workItem from="1603564630521" duration="1537000" />
       <workItem from="1603632314132" duration="6062000" />
-      <workItem from="1603645207612" duration="8674000" />
+      <workItem from="1603645207612" duration="8939000" />
+      <workItem from="1603660691759" duration="627000" />
+      <workItem from="1603670475110" duration="3520000" />
     </task>
     <servers />
   </component>
@@ -250,13 +249,13 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="374" y="136" width="618" height="522" key="find.popup/0.27.1366.741@0.27.1366.741" timestamp="1603553690381" />
-    <state x="347" y="177" key="run.anything.popup" timestamp="1603650708068">
+    <state x="347" y="177" key="run.anything.popup" timestamp="1603672868635">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="347" y="177" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603650708068" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603652123449">
+    <state x="347" y="177" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603672868635" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603672069975">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603652123449" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603672069975" />
   </component>
 </project>

@@ -1,11 +1,22 @@
 <template>
     <div>
-        <input :id="`folder-${folder.id}`" @input="emitFolderSelected(folder.id)" type="radio" name="folder">
+        <input
+            :id="`folder-${folder.id}`"
+            @input="emitFolderSelected(folder.id)"
+            type="radio"
+            v-if="folderIdToDisable != folder.id && !folderHasChildDisabled()"
+            name="folder"
+        />
         <label :for="`folder-${folder.id}`">
             <b-icon icon="folder" class="text-warning" font-scale="1.5" />
             <span>{{ folder.name }}</span>
         </label>
-        <folder-tree-content @folderSelected="emitFolderSelected" :children="folder.folders"/>
+        <folder-tree-content
+            v-if="folderIdToDisable != folder.id"
+            :folder-id-to-disable="folderIdToDisable"
+            @folderSelected="emitFolderSelected"
+            :children="folder.folders"
+        />
     </div>
 </template>
 
@@ -17,7 +28,19 @@ export default {
     name: "FolderTree",
     mixins: [EmitFolderSelectedEvent],
     components: {FolderTreeContent},
-    props: ['folder']
+    methods: {
+        folderHasChildDisabled () {
+            let hasChildDisabled = false
+
+            this.folder.folders.map(folder => {
+                if (folder.id == this.folderIdToDisable)
+                    hasChildDisabled = true
+            })
+
+            return hasChildDisabled
+        }
+    },
+    props: ['folder', 'folderIdToDisable']
 }
 </script>
 
